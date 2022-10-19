@@ -1,0 +1,1 @@
+print('René Descartes once said, "I think, therefore I am"')
