@@ -7,7 +7,6 @@ print(guests[3] + ", Let's have dinner!")
 
 print("\n" + guests[0], "can't make it.")
 
-del(guests[0])
 guests.insert(0, "Scarlett")
 
 print("\n" + guests[0] + ", Dinner?")
