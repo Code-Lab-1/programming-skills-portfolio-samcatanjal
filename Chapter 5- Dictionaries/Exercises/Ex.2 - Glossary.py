@@ -1,16 +1,16 @@
-glossary = {'variable' : 'a reserved memory location to store values.', 'list': 'are used to store multiple items in a single variable', 'string': 'a series of characters.', 'dictionary' : 'are used to store data values in key:value pairs.', 'function' : 'a group of related statements that performs a specific task.' }
+glossary = {'Variable' : 'a reserved memory location to store values.', 'List': 'are used to store multiple items in a single variable', 'String': 'a series of characters.', 'Dictionary' : 'are used to store data values in key:value pairs.', 'Function' : 'a group of related statements that performs a specific task.' }
 
-word = 'variable'
+word = 'Variable'
 print("\n" + word + ": " + glossary[word])
 
-word = 'list'
+word = 'List'
 print("\n" + word + ": " + glossary[word])
 
-word = 'string'
+word = 'String'
 print("\n" + word + ": " + glossary[word])
 
-word = 'dictionary'
+word = 'Dictionary'
 print("\n" + word + ": " + glossary[word])
 
-word = 'function'
+word = 'Function'
 print("\n" + word + ": " + glossary[word])
