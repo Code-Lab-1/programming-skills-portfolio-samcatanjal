@@ -1,2 +1,5 @@
-games= ("Valorant", "Counter Strike", "Minecraft", "Fortnite", "Last of Us", "Among Us", "DOTA", "League of Legends", "Cyberpunk", "Subnautica")
-print(games)
+list1 = ["one","two","three"]
+
+list2 = ["four","five","six"]
+
+print(list1 + list2)

@@ -1,4 +1,6 @@
-def good_morning(name):
-    print('Hello ' + name + ', Good Morning!')
-
-good_morning('Sam')
+def fav(fruits):
+  for x in fruits:
+    print(x)
+fruits = ['Apple','Banana','Mango']
+    
+fav(fruits)
