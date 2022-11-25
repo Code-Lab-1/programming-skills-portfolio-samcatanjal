@@ -9,12 +9,12 @@ print(places)
 print('\nAlphabetical order using sorted():')
 print(sorted(places))
 
-print('\n' + places)
+print('\n', places)
 
 print('\nReverse alphabetical order using sorted():')
 print(sorted(places, reverse=True))
 
-print('\n' + places)
+print('\n', places)
 
 print('\nChange list order using reverse():')
 places.reverse()
