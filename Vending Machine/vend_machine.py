@@ -1,3 +1,4 @@
+
 # function to display menu
 def menu_print():
     print('            Vending Machine              \n')
@@ -37,55 +38,56 @@ def vend_machine():
     menu_print()
 
 
-    vend_cash = 1000
-    user_cash = int(input('\nEnter Amount in AED: '))
+    vend_cash = 1000 # cash in machine
+    user_cash = int(input('\nEnter Amount in AED: ')) # user inputs amount of cash
 
     while True:
-        user_input = input('\nEnter Code: ')
-        user = user_input.capitalize()
+        user_input = input('\nEnter Code: ') # user input code
+        user = user_input.capitalize() # here just to ensure all user input(ex. a1 or A1) is accepted
         
-        for item in menu:
-            if user == item['code']:
-                user = item
+        for item in menu: # to get the item dictionries from inside menu list
+            if user == item['code']: # runs if user input is found in item codes, else nothing happens and continues
+                user = item 
                 price = item['price']
                 stock = item['stock']
-                vend_cash -= price
+                vend_cash -= price # subtract price(item that user bought) from cash in machine
 
-                if vend_cash >= price:
-                    if stock == 0:
+                if vend_cash >= price: # runs if there is still money in machine, if not it goes to else statement
+                    if stock == 0: # runs when item selcted is out of stock, if not it goes to else statement
                         print('\nItem Out of Stock')
-                        cont = input('\nContinue buying?(yes/no)\n')
-                        if cont == 'no':
-                            print('\nAED', user_cash, 'has been refunded. Thank you! Have a nice day!')
+                        cont = input('\nContinue buying?(yes/no)\n') # asks user if they want to continue buying
+                        if cont == 'no': # runs if they want to exit
+                            print('\nAED', user_cash, 'has been refunded. Thank you! Have a nice day!') # refunds remaining amount given (out of stock)
                             return
-                        else:
+                        else: # yes, program continues
                             continue
         
-                    while user_cash < price:
-                        user_cash = int(input('\nInsufficient Amount.\n\nEnter 0 to Exit Vending Machine or Insert ' + str(price - user_cash) + ' AED: '))
-                        if user_cash == 0:
+                    while user_cash < price: # runs to ask user to input more money if what they put in is insufficient
+                        user_cash = int(input('\nInsufficient Amount.\n\nEnter 0 to Exit Vending Machine or Insert ' + str(price - user_cash) + ' AED: ')) #add money or exit by entering 0
+                        if user_cash == 0: # stops program
                             print('\nThank you! Have a nice day.')
                             return
-                        else:
+                        else: # inputs amount and item is payed. program continues
                             continue
 
-                    else:
-                        print('\nOne', user['item'], 'has been dispensed.')
-                        user['stock'] -= 1
-                        user_cash -= price
+                    else: # runs when item is still in stock
+                        print('\nOne', user['item'], 'has been dispensed.') # message to say item is dispensed
+                        user['stock'] -= 1 # removes said item from stock
+                        user_cash -= price # price of item is subtracted from cash inputted by user
 
-                        buy_more = input('\nBuy more?(yes/no)\n')
-                        if buy_more == 'yes':
+                        buy_more = input('\nBuy more?(yes/no)\n') # asks user if they want to continue or not
+                        if buy_more == 'yes': # continues program
                             continue
-                        else:
-                            if user_cash != 0:
+                        else: # no, runs if user want to exit
+                            if user_cash != 0: # if they have remaining balance, this refund message will appear
                                 print('\nAED', str(user_cash), 'has been refunded.')
                                 print('Thank you! Have a nice day!')
                                 return
-                            else:
+                            else: # if they had 0 balance left, this appears
                                 print('\nThank you! Have a nice day!')
                                 return
-                else:                    
+
+                else: # runs if there is no more change to give to user                    
                     print('\nMachine Out of Change.')
                     print('AED', user_cash, 'has been refunded')
                     print('Thank you! Have a nice day!')
